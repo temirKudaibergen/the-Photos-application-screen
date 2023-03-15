@@ -15,6 +15,7 @@
 		C81A958229C21D370090F552 /* PeopleAndPlacesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81A958129C21D370090F552 /* PeopleAndPlacesViewCell.swift */; };
 		C81A958529C21D580090F552 /* MediaTypesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81A958429C21D580090F552 /* MediaTypesViewCell.swift */; };
 		C81A958729C21D6F0090F552 /* UtilitiesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81A958629C21D6F0090F552 /* UtilitiesViewCell.swift */; };
+		C81A958929C237450090F552 /* HeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81A958829C237450090F552 /* HeaderSupplementaryView.swift */; };
 		C8930D9C29C1EE3100AB13C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8930D9B29C1EE3100AB13C5 /* AppDelegate.swift */; };
 		C8930D9E29C1EE3100AB13C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8930D9D29C1EE3100AB13C5 /* SceneDelegate.swift */; };
 		C8930DA029C1EE3100AB13C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8930D9F29C1EE3100AB13C5 /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 		C81A958129C21D370090F552 /* PeopleAndPlacesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleAndPlacesViewCell.swift; sourceTree = "<group>"; };
 		C81A958429C21D580090F552 /* MediaTypesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTypesViewCell.swift; sourceTree = "<group>"; };
 		C81A958629C21D6F0090F552 /* UtilitiesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesViewCell.swift; sourceTree = "<group>"; };
+		C81A958829C237450090F552 /* HeaderSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSupplementaryView.swift; sourceTree = "<group>"; };
 		C8930D9829C1EE3100AB13C5 /* HW-14-Kudaibergen_Temirlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW-14-Kudaibergen_Temirlan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8930D9B29C1EE3100AB13C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8930D9D29C1EE3100AB13C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				C81A958129C21D370090F552 /* PeopleAndPlacesViewCell.swift */,
 				C81A958429C21D580090F552 /* MediaTypesViewCell.swift */,
 				C81A958629C21D6F0090F552 /* UtilitiesViewCell.swift */,
+				C81A958829C237450090F552 /* HeaderSupplementaryView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				C8930DA029C1EE3100AB13C5 /* ViewController.swift in Sources */,
 				C8930D9C29C1EE3100AB13C5 /* AppDelegate.swift in Sources */,
 				C8930D9E29C1EE3100AB13C5 /* SceneDelegate.swift in Sources */,
+				C81A958929C237450090F552 /* HeaderSupplementaryView.swift in Sources */,
 				C81A957829C1F5540090F552 /* ListSection.swift in Sources */,
 				C81A958529C21D580090F552 /* MediaTypesViewCell.swift in Sources */,
 				C81A958729C21D6F0090F552 /* UtilitiesViewCell.swift in Sources */,
