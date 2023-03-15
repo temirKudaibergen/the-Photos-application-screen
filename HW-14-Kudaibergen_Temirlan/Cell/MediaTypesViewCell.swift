@@ -71,7 +71,7 @@ class MediaTypesViewCell: UICollectionViewCell {
     }
     
     func configureCell(imageName: String, title: String, filesCount: String) {
-        albumsImage.image = UIImage(named: imageName)
+        albumsImage.image = UIImage(systemName: imageName)
         albumsTitle.text = title
         filesCountInAlbum.text = filesCount
     }
@@ -80,5 +80,6 @@ class MediaTypesViewCell: UICollectionViewCell {
         stack.snp.makeConstraints{
             $0.size.equalTo(contentView)
         }
+        }
     }
-}
+

@@ -12,8 +12,8 @@ struct MockData {
     
     private let myAlbums: ListSection = {
         .myAlbums([.init(image: "Recent",title: "Недавние",countFiles: "765"),
+                   .init(image: "Instagram", title: "Instagram", countFiles: "54"),
                    .init(image: "WhatsApp", title: "WhatsApp", countFiles: "43"),
-                   .init(image: "RecInstagrament", title: "Instagram", countFiles: "54"),
                    .init(image: "Favorites", title: "Избранные", countFiles: "32"),
                    .init(image: "NOMO", title: "NOMO", countFiles: "34"),
                    .init(image: "VN", title: "VN", countFiles: "78"),

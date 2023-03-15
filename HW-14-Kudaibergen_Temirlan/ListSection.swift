@@ -15,9 +15,9 @@ enum ListSection {
     
     var items: [ListItem] {
         switch self {
-        case .mediaTypes(let items),
-                .myAlbums(let items),
+        case.myAlbums(let items),
                 .peopleAndPlaces(let items),
+                .mediaTypes(let items),
                 .utilities(let items):
             return items
         }
