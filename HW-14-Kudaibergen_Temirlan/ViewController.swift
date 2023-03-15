@@ -6,13 +6,40 @@
 //
 
 import UIKit
+import SnapKit
 
-class ViewController: UIViewController {
-
+final class ViewController: UIViewController {
+    
+//    MARK: UI
+    
+    private lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let collectionViwe = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        
+        return collectionViwe
+    }()
+    
+//    MARK: Lifecyle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
+        setupLayout()
     }
+    
+//    MARK: Setup
 
-
+    private func setupViews() {
+        view.backgroundColor = .white
+        view.addSubview(collectionView)
+    }
+    
+    private func setupLayout() {
+        collectionView.snp.makeConstraints{
+            $0.top.equalTo(additionalSafeAreaInsets)
+            $0.edges.equalTo(view)
+        }
+    }
+    
 }
 
