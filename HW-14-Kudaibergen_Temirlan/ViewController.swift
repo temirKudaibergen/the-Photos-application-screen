@@ -15,9 +15,14 @@ final class ViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionViwe = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
+        collectionViwe.backgroundColor = .none
+        collectionViwe.bounces = false
+        collectionViwe.delegate = self
+        collectionViwe.dataSource = self
         return collectionViwe
     }()
+    
+    private let sections = MockData.shared.pageData
     
 //    MARK: Lifecyle
     
@@ -40,6 +45,22 @@ final class ViewController: UIViewController {
             $0.edges.equalTo(view)
         }
     }
+    
+}
+
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        sections.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        sections[section].count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
+    }
+    
     
 }
 
