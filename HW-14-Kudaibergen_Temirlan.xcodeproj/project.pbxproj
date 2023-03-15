@@ -35,6 +35,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C81A957029C1F46A0090F552 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C8930D9B29C1EE3100AB13C5 /* AppDelegate.swift */,
+				C8930D9D29C1EE3100AB13C5 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C81A957129C1F47D0090F552 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C8930DA429C1EE3200AB13C5 /* Assets.xcassets */,
+				C81A957329C1F4A10090F552 /* Configuration */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		C81A957229C1F48F0090F552 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C81A957429C1F4D50090F552 /* Storyboard */,
+				C81A957029C1F46A0090F552 /* App */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		C81A957329C1F4A10090F552 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				C8930DA929C1EE3200AB13C5 /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		C81A957429C1F4D50090F552 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				C8930DA629C1EE3200AB13C5 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		C8930D8F29C1EE3100AB13C5 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +97,9 @@
 		C8930D9A29C1EE3100AB13C5 /* HW-14-Kudaibergen_Temirlan */ = {
 			isa = PBXGroup;
 			children = (
-				C8930D9B29C1EE3100AB13C5 /* AppDelegate.swift */,
-				C8930D9D29C1EE3100AB13C5 /* SceneDelegate.swift */,
+				C81A957229C1F48F0090F552 /* Source */,
+				C81A957129C1F47D0090F552 /* Resource */,
 				C8930D9F29C1EE3100AB13C5 /* ViewController.swift */,
-				C8930DA429C1EE3200AB13C5 /* Assets.xcassets */,
-				C8930DA629C1EE3200AB13C5 /* LaunchScreen.storyboard */,
-				C8930DA929C1EE3200AB13C5 /* Info.plist */,
 			);
 			path = "HW-14-Kudaibergen_Temirlan";
 			sourceTree = "<group>";
