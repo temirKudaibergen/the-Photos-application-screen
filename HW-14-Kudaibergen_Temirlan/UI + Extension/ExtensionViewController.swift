@@ -1,76 +1,13 @@
 //
-//  ViewController.swift
+//  ExtensionViewController.swift
 //  HW-14-Kudaibergen_Temirlan
 //
-//  Created by Темирлан Кудайберген on 15.03.2023.
+//  Created by Темирлан Кудайберген on 18.03.2023.
 //
 
 import UIKit
-import SnapKit
 
-final class ViewController: UIViewController {
-    
-//    MARK: UI
-    
-    private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        let collectionViwe = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionViwe.backgroundColor = .none
-        collectionViwe.bounces = false
-        collectionViwe.delegate = self
-        collectionViwe.dataSource = self
-        collectionViwe.register(MyAlbumsViewCell.self,
-                                forCellWithReuseIdentifier: MyAlbumsViewCell.identifier)
-        collectionViwe.register(PeopleAndPlacesViewCell.self,
-                                forCellWithReuseIdentifier: PeopleAndPlacesViewCell.identifier)
-        collectionViwe.register(MediaTypesViewCell.self,
-                                forCellWithReuseIdentifier: MediaTypesViewCell.identifier)
-        collectionViwe.register(UtilitiesViewCell.self,
-                                forCellWithReuseIdentifier: UtilitiesViewCell.identifier)
-        collectionViwe.register(HeaderSupplementaryView.self,
-                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                withReuseIdentifier: HeaderSupplementaryView.identifier)
-        collectionViwe.collectionViewLayout = createLayout()
-        return collectionViwe
-    }()
-    
-    private let sections = MockData.shared.pageData
-    
-//    MARK: Lifecyle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupViews()
-        setupLayout()
-        setupAlbumsBar()
-    }
-    
-//    MARK: Setup
-
-    private func setupViews() {
-        view.backgroundColor = .white
-        view.addSubview(collectionView)
-    }
-    
-    private func setupLayout() {
-        collectionView.snp.makeConstraints{
-            $0.top.equalTo(additionalSafeAreaInsets)
-            $0.edges.equalTo(view)
-        }
-    }
-    
-    private func setupAlbumsBar() {
-        title = "Альбомы"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.setLeftBarButton(UIBarButtonItem(
-            title: nil,
-            image: UIImage(systemName: "plus"),
-            primaryAction: UIAction(handler: {_ in self.dismiss(animated: true)}),
-            menu: nil), animated: true)
-    }
-}
-
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension Albums: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         sections.count
     }
@@ -128,9 +65,9 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         }
     }
     
-//    MARK: Creat Layout
+    //    MARK: Creat Layout
     
-    private func createLayout() -> UICollectionViewCompositionalLayout {
+    func createLayout() -> UICollectionViewCompositionalLayout {
         UICollectionViewCompositionalLayout { [weak self] sectionIndex, _ in
             guard let self = self else { return nil}
             let section = self.sections[sectionIndex]
@@ -245,7 +182,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                               heightDimension: .absolute(44))
+                                               heightDimension: .absolute(40))
         let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [layoutItem])
         
         let sectionLayout = NSCollectionLayoutSection(group: layoutGroup)

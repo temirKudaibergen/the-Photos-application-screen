@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C80E9ABD29C5E4C1007FE9FC /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80E9ABC29C5E4C1007FE9FC /* ExtensionViewController.swift */; };
+		C80E9ABF29C5E6E6007FE9FC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80E9ABE29C5E6E6007FE9FC /* TabBarController.swift */; };
+		C80E9AC129C5E90D007FE9FC /* OtherViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80E9AC029C5E90D007FE9FC /* OtherViewControllers.swift */; };
 		C81A957629C1F5300090F552 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81A957529C1F5300090F552 /* ListItem.swift */; };
 		C81A957829C1F5540090F552 /* ListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81A957729C1F5540090F552 /* ListSection.swift */; };
 		C81A957B29C1F6FC0090F552 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C81A957A29C1F6FC0090F552 /* SnapKit */; };
@@ -18,12 +21,15 @@
 		C81A958929C237450090F552 /* HeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81A958829C237450090F552 /* HeaderSupplementaryView.swift */; };
 		C8930D9C29C1EE3100AB13C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8930D9B29C1EE3100AB13C5 /* AppDelegate.swift */; };
 		C8930D9E29C1EE3100AB13C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8930D9D29C1EE3100AB13C5 /* SceneDelegate.swift */; };
-		C8930DA029C1EE3100AB13C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8930D9F29C1EE3100AB13C5 /* ViewController.swift */; };
+		C8930DA029C1EE3100AB13C5 /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8930D9F29C1EE3100AB13C5 /* Albums.swift */; };
 		C8930DA529C1EE3200AB13C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8930DA429C1EE3200AB13C5 /* Assets.xcassets */; };
 		C8930DA829C1EE3200AB13C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8930DA629C1EE3200AB13C5 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C80E9ABC29C5E4C1007FE9FC /* ExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
+		C80E9ABE29C5E6E6007FE9FC /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		C80E9AC029C5E90D007FE9FC /* OtherViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewControllers.swift; sourceTree = "<group>"; };
 		C81A957529C1F5300090F552 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		C81A957729C1F5540090F552 /* ListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSection.swift; sourceTree = "<group>"; };
 		C81A957C29C2058E0090F552 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
@@ -35,7 +41,7 @@
 		C8930D9829C1EE3100AB13C5 /* HW-14-Kudaibergen_Temirlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW-14-Kudaibergen_Temirlan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8930D9B29C1EE3100AB13C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8930D9D29C1EE3100AB13C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C8930D9F29C1EE3100AB13C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C8930D9F29C1EE3100AB13C5 /* Albums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Albums.swift; sourceTree = "<group>"; };
 		C8930DA429C1EE3200AB13C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8930DA729C1EE3200AB13C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8930DA929C1EE3200AB13C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +59,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C80E9ABB29C5E479007FE9FC /* UI + Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C8930D9F29C1EE3100AB13C5 /* Albums.swift */,
+				C80E9ABC29C5E4C1007FE9FC /* ExtensionViewController.swift */,
+				C80E9AC029C5E90D007FE9FC /* OtherViewControllers.swift */,
+				C81A957529C1F5300090F552 /* ListItem.swift */,
+				C81A957C29C2058E0090F552 /* MockData.swift */,
+				C81A957729C1F5540090F552 /* ListSection.swift */,
+				C80E9ABE29C5E6E6007FE9FC /* TabBarController.swift */,
+			);
+			path = "UI + Extension";
+			sourceTree = "<group>";
+		};
 		C81A957029C1F46A0090F552 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,13 +147,10 @@
 		C8930D9A29C1EE3100AB13C5 /* HW-14-Kudaibergen_Temirlan */ = {
 			isa = PBXGroup;
 			children = (
+				C80E9ABB29C5E479007FE9FC /* UI + Extension */,
 				C81A957E29C21CCE0090F552 /* Cell */,
 				C81A957229C1F48F0090F552 /* Source */,
 				C81A957129C1F47D0090F552 /* Resource */,
-				C8930D9F29C1EE3100AB13C5 /* ViewController.swift */,
-				C81A957529C1F5300090F552 /* ListItem.swift */,
-				C81A957C29C2058E0090F552 /* MockData.swift */,
-				C81A957729C1F5540090F552 /* ListSection.swift */,
 			);
 			path = "HW-14-Kudaibergen_Temirlan";
 			sourceTree = "<group>";
@@ -215,16 +232,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				C81A957629C1F5300090F552 /* ListItem.swift in Sources */,
+				C80E9ABF29C5E6E6007FE9FC /* TabBarController.swift in Sources */,
 				C81A958029C21CFF0090F552 /* MyAlbumsViewCell.swift in Sources */,
 				C81A957D29C2058E0090F552 /* MockData.swift in Sources */,
+				C80E9ABD29C5E4C1007FE9FC /* ExtensionViewController.swift in Sources */,
 				C81A958229C21D370090F552 /* PeopleAndPlacesViewCell.swift in Sources */,
-				C8930DA029C1EE3100AB13C5 /* ViewController.swift in Sources */,
+				C8930DA029C1EE3100AB13C5 /* Albums.swift in Sources */,
 				C8930D9C29C1EE3100AB13C5 /* AppDelegate.swift in Sources */,
 				C8930D9E29C1EE3100AB13C5 /* SceneDelegate.swift in Sources */,
 				C81A958929C237450090F552 /* HeaderSupplementaryView.swift in Sources */,
 				C81A957829C1F5540090F552 /* ListSection.swift in Sources */,
 				C81A958529C21D580090F552 /* MediaTypesViewCell.swift in Sources */,
 				C81A958729C21D6F0090F552 /* UtilitiesViewCell.swift in Sources */,
+				C80E9AC129C5E90D007FE9FC /* OtherViewControllers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
