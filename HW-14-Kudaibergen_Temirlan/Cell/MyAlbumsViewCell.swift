@@ -29,6 +29,7 @@ final class MyAlbumsViewCell: UICollectionViewCell {
     
     private let filesCountInAlbum: UILabel = {
        let lable = UILabel()
+        lable.textColor = .lightGray
         return lable
     }()
     

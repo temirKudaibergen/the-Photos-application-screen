@@ -16,8 +16,19 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate
         delegate = self
         setupTabBarController()
         setupTabBarViewControllers()
+        setupAlbumsBar()
     }
     
+    func setupAlbumsBar() {
+        title = "Альбомы"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.setLeftBarButton(UIBarButtonItem(
+            title: nil,
+            image: UIImage(systemName: "plus"),
+            primaryAction: UIAction(handler: {_ in self.dismiss(animated: true)}),
+            menu: nil), animated: true)
+    }
+
     // MARK: - TabBar Configuration
     
     func setupTabBarController() {
