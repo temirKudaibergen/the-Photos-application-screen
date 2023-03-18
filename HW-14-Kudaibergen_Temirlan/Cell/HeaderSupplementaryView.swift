@@ -15,12 +15,10 @@ class HeaderSupplementaryView: UICollectionReusableView {
     
     //     MARK: UI
     
-    private let headerLable: UILabel = {
+     let headerLable: UILabel = {
         let lable = UILabel()
-        lable.text = "header"
-        lable.textAlignment = .center
-        lable.font = UIFont.systemFont(ofSize: 16)
-        lable.textColor = .black
+         lable.textColor = .black
+        lable.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         return lable
     }()
     
@@ -28,9 +26,14 @@ class HeaderSupplementaryView: UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
-        addSubview(headerLable)
-        
+        clipsToBounds = true
+        swtupViews()
+        setupLayout()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        headerLable.text = nil
     }
     
     required init?(coder: NSCoder) {
@@ -43,9 +46,14 @@ class HeaderSupplementaryView: UICollectionReusableView {
         headerLable.text = categoryName
     }
     
+    private func swtupViews() {
+        addSubview(headerLable)
+    }
+    
     private func setupLayout() {
         headerLable.snp.makeConstraints{
-            $0.centerY.equalTo(center)
+            $0.bottom.equalTo(self)
+            $0.left.equalTo(self)
         }
     }
 }

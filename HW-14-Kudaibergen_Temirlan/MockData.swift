@@ -41,6 +41,7 @@ struct MockData {
             .init(image: "dot.circle.viewfinder", title: "Записи экрана", countFiles: "4"),
             .init(image: "r.square.on.square", title: "RAW", countFiles: "123")
         ])
+        
     }()
     
     private let utilities: ListSection = {

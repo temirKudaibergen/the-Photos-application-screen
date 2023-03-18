@@ -18,24 +18,17 @@ final class MyAlbumsViewCell: UICollectionViewCell {
     private let albumsImage: UIImageView = {
        let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
         return imageView
     }()
     
     private let albumsTitle: UILabel = {
        let lable = UILabel()
-        lable.text = "Мои альбомы"
-        lable.textAlignment = .center
-        lable.font = UIFont.systemFont(ofSize: 14)
-        lable.textColor = .black
         return lable
     }()
     
     private let filesCountInAlbum: UILabel = {
        let lable = UILabel()
-        lable.text = ""
-        lable.textAlignment = .center
-        lable.font = UIFont.systemFont(ofSize: 14)
-        lable.textColor = .black
         return lable
     }()
     
@@ -45,7 +38,6 @@ final class MyAlbumsViewCell: UICollectionViewCell {
         stack.distribution = .fill
         return stack
     }()
-    
     
     // MARK: Initializers
     
@@ -78,7 +70,9 @@ final class MyAlbumsViewCell: UICollectionViewCell {
     
     private func setupLayout() {
         stack.snp.makeConstraints{
-            $0.size.equalTo(contentView)
+            $0.top.left.bottom.right.equalTo(contentView)
+            $0.width.equalTo(170)
+            $0.height.equalTo(300)
         }
     }
 }

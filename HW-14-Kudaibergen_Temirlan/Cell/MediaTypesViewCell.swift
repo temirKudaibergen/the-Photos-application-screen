@@ -15,45 +15,38 @@ class MediaTypesViewCell: UICollectionViewCell {
     static let identifier = "MediaTypesViewCell"
     
     // MARK: UI
-   
+    
     private let albumsImage: UIImageView = {
-       let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        let imageView = UIImageView()
         return imageView
     }()
     
     private let albumsTitle: UILabel = {
-       let lable = UILabel()
-        lable.text = "Мои альбомы"
-        lable.textAlignment = .center
-        lable.font = UIFont.systemFont(ofSize: 14)
-        lable.textColor = .black
+        let lable = UILabel()
+        lable.textColor = .systemBlue
+        lable.font = .systemFont(ofSize: 20)
         return lable
     }()
     
     private let filesCountInAlbum: UILabel = {
-       let lable = UILabel()
-        lable.text = ""
-        lable.textAlignment = .center
-        lable.font = UIFont.systemFont(ofSize: 14)
-        lable.textColor = .black
+        let lable = UILabel()
+        lable.textAlignment = .left
+        lable.textColor = .lightGray
         return lable
     }()
     
-    private let stack: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.distribution = .fill
-        return stack
-    }()
-    
     // MARK: Initializers
- 
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        clipsToBounds = true
         setupViews()
         setupLayout()
+    }
+    
+    override func prepareForReuse() {
+        albumsImage.image = nil
+        albumsTitle.text = nil
+        filesCountInAlbum.text = nil
     }
     
     required init?(coder: NSCoder) {
@@ -64,10 +57,9 @@ class MediaTypesViewCell: UICollectionViewCell {
     
     private func setupViews() {
         backgroundColor = .white
-        contentView.addSubview(stack)
-        stack.addArrangedSubview(albumsImage)
-        stack.addArrangedSubview(albumsTitle)
-        stack.addArrangedSubview(filesCountInAlbum)
+        contentView.addSubview(albumsImage)
+        contentView.addSubview(albumsTitle)
+        contentView.addSubview(filesCountInAlbum)
     }
     
     func configureCell(imageName: String, title: String, filesCount: String) {
@@ -77,9 +69,16 @@ class MediaTypesViewCell: UICollectionViewCell {
     }
     
     private func setupLayout() {
-        stack.snp.makeConstraints{
-            $0.size.equalTo(contentView)
+        albumsImage.snp.makeConstraints{
+            $0.width.equalTo(29)
+            $0.height.equalTo(28)
         }
+        albumsTitle.snp.makeConstraints{
+            $0.left.equalTo(albumsImage.snp.right).offset(20)
+        }
+        filesCountInAlbum.snp.makeConstraints{
+            $0.right.equalToSuperview().offset(-15)
         }
     }
+}
 
