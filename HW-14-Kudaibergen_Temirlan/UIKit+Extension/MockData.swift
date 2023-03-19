@@ -8,6 +8,7 @@
 import UIKit
 
 struct MockData {
+    
     static let shared = MockData()
     
     private let myAlbums: ListSection = {
@@ -41,7 +42,6 @@ struct MockData {
             .init(image: "dot.circle.viewfinder", title: "Записи экрана", filesCount: "4"),
             .init(image: "r.square.on.square", title: "RAW", filesCount: "123")
         ])
-        
     }()
     
     private let utilities: ListSection = {

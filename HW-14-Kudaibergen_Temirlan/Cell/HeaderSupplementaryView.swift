@@ -26,7 +26,6 @@ class HeaderSupplementaryView: UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        clipsToBounds = true
         swtupViews()
         setupLayout()
     }
@@ -48,6 +47,7 @@ class HeaderSupplementaryView: UICollectionReusableView {
     
     private func swtupViews() {
         addSubview(headerLable)
+        clipsToBounds = true
     }
     
     private func setupLayout() {
