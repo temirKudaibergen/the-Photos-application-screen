@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MediaTypesViewCell: UICollectionViewCell {
+final class MediaTypesViewCell: UICollectionViewCell {
     
     // MARK: Properties
     
@@ -16,19 +16,19 @@ class MediaTypesViewCell: UICollectionViewCell {
     
     // MARK: UI
     
-    private let albumsImage: UIImageView = {
+    private let albumsImageImageView: UIImageView = {
         let imageView = UIImageView()
         return imageView
     }()
     
-    private let albumsTitle: UILabel = {
+    private let albumsTitleLable: UILabel = {
         let lable = UILabel()
         lable.textColor = .systemBlue
         lable.font = .systemFont(ofSize: 20)
         return lable
     }()
     
-    private let filesCountInAlbum: UILabel = {
+    private let filesCountInAlbumLable: UILabel = {
         let lable = UILabel()
         lable.textAlignment = .left
         lable.textColor = .lightGray
@@ -44,9 +44,9 @@ class MediaTypesViewCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
-        albumsImage.image = nil
-        albumsTitle.text = nil
-        filesCountInAlbum.text = nil
+        albumsImageImageView.image = nil
+        albumsTitleLable.text = nil
+        filesCountInAlbumLable.text = nil
     }
     
     required init?(coder: NSCoder) {
@@ -57,26 +57,26 @@ class MediaTypesViewCell: UICollectionViewCell {
     
     private func setupViews() {
         backgroundColor = .white
-        contentView.addSubview(albumsImage)
-        contentView.addSubview(albumsTitle)
-        contentView.addSubview(filesCountInAlbum)
+        contentView.addSubview(albumsImageImageView)
+        contentView.addSubview(albumsTitleLable)
+        contentView.addSubview(filesCountInAlbumLable)
     }
     
     func configureCell(imageName: String, title: String, filesCount: String) {
-        albumsImage.image = UIImage(systemName: imageName)
-        albumsTitle.text = title
-        filesCountInAlbum.text = filesCount
+        albumsImageImageView.image = UIImage(systemName: imageName)
+        albumsTitleLable.text = title
+        filesCountInAlbumLable.text = filesCount
     }
     
     private func setupLayout() {
-        albumsImage.snp.makeConstraints{
+        albumsImageImageView.snp.makeConstraints{
             $0.width.equalTo(29)
             $0.height.equalTo(28)
         }
-        albumsTitle.snp.makeConstraints{
-            $0.left.equalTo(albumsImage.snp.right).offset(20)
+        albumsTitleLable.snp.makeConstraints{
+            $0.left.equalTo(albumsImageImageView.snp.right).offset(20)
         }
-        filesCountInAlbum.snp.makeConstraints{
+        filesCountInAlbumLable.snp.makeConstraints{
             $0.right.equalToSuperview().offset(-15)
         }
     }

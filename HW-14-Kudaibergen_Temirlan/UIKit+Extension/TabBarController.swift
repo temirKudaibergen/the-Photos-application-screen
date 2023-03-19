@@ -40,19 +40,27 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate
     func setupTabBarViewControllers() {
         
         let firstViewController = OtherViewControllers()
-        let firstIcon = UITabBarItem(title: "Медиатека", image: UIImage(systemName: "rectangle.fill.badge.person.crop"), selectedImage: UIImage(systemName: "rectangle.fill.badge.person.crop"))
+        let firstIcon = UITabBarItem(title: "Медиатека",
+                                     image: UIImage(systemName: "rectangle.fill.badge.person.crop"),
+                                     selectedImage: UIImage(systemName: "rectangle.fill.badge.person.crop"))
         firstViewController.tabBarItem = firstIcon
         
         let secondViewController = OtherViewControllers()
-        let secondIcon = UITabBarItem(title: "Для Вас", image: UIImage(systemName: "heart.text.square.fill"), selectedImage: UIImage(systemName: "heart.text.square.fill"))
+        let secondIcon = UITabBarItem(title: "Для Вас",
+                                      image: UIImage(systemName: "heart.text.square.fill"),
+                                      selectedImage: UIImage(systemName: "heart.text.square.fill"))
         secondViewController.tabBarItem = secondIcon
         
         let albumsViewController = Albums()
-        let albumsIcon = UITabBarItem(title: "Альбомы", image: UIImage(systemName: "square.stack.fill"), selectedImage: UIImage(systemName: "square.stack.fill"))
+        let albumsIcon = UITabBarItem(title: "Альбомы",
+                                      image: UIImage(systemName: "square.stack.fill"),
+                                      selectedImage: UIImage(systemName: "square.stack.fill"))
         albumsViewController.tabBarItem = albumsIcon
         
         let fourthViewController = OtherViewControllers()
-        let fourthIcon = UITabBarItem(title: "Поиск", image: UIImage(systemName: "magnifyingglass"), selectedImage: UIImage(systemName: "magnifyingglass"))
+        let fourthIcon = UITabBarItem(title: "Поиск",
+                                      image: UIImage(systemName: "magnifyingglass"),
+                                      selectedImage: UIImage(systemName: "magnifyingglass"))
         fourthViewController.tabBarItem = fourthIcon
         
         let controllers = [firstViewController, secondViewController, albumsViewController, fourthViewController]

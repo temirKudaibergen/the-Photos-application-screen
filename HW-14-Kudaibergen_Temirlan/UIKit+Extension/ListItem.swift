@@ -10,5 +10,5 @@ import UIKit
 struct ListItem {
     let image: String
     let title: String
-    let countFiles: String
+    let filesCount: String
 }

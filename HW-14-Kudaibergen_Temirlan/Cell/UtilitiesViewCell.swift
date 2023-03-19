@@ -8,28 +8,28 @@
 import UIKit
 import SnapKit
 
-class UtilitiesViewCell: UICollectionViewCell {
+final class UtilitiesViewCell: UICollectionViewCell {
     
     // MARK: Properties
     
     static let identifier = "UtilitiesViewCell"
     
     // MARK: UI
-   
-    private let albumsImage: UIImageView = {
-       let imageView = UIImageView()
+    
+    private let albumsImageImageView: UIImageView = {
+        let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
-    private let albumsTitle: UILabel = {
+    private let albumsTitleLable: UILabel = {
         let lable = UILabel()
         lable.textColor = .systemBlue
         lable.font = .systemFont(ofSize: 20)
         return lable
     }()
     
-    private let filesCountInAlbum: UILabel = {
+    private let filesCountInAlbumLable: UILabel = {
         let lable = UILabel()
         lable.textAlignment = .left
         lable.textColor = .lightGray
@@ -37,18 +37,17 @@ class UtilitiesViewCell: UICollectionViewCell {
     }()
     
     // MARK: Initializers
- 
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        clipsToBounds = true
         setupViews()
         setupLayout()
     }
     
     override func prepareForReuse() {
-        self.albumsImage.image = nil
-        self.albumsTitle.text = nil
-        self.filesCountInAlbum.text = nil
+        self.albumsImageImageView.image = nil
+        self.albumsTitleLable.text = nil
+        self.filesCountInAlbumLable.text = nil
     }
     
     required init?(coder: NSCoder) {
@@ -59,26 +58,27 @@ class UtilitiesViewCell: UICollectionViewCell {
     
     private func setupViews() {
         backgroundColor = .white
-        contentView.addSubview(albumsImage)
-        contentView.addSubview(albumsTitle)
-        contentView.addSubview(filesCountInAlbum)
+        clipsToBounds = true
+        contentView.addSubview(albumsImageImageView)
+        contentView.addSubview(albumsTitleLable)
+        contentView.addSubview(filesCountInAlbumLable)
     }
     
     func configureCell(imageName: String, title: String, filesCount: String) {
-        albumsImage.image = UIImage(systemName: imageName)
-        albumsTitle.text = title
-        filesCountInAlbum.text = filesCount
+        albumsImageImageView.image = UIImage(systemName: imageName)
+        albumsTitleLable.text = title
+        filesCountInAlbumLable.text = filesCount
     }
     
     private func setupLayout() {
-        albumsImage.snp.makeConstraints{
+        albumsImageImageView.snp.makeConstraints{
             $0.width.equalTo(29)
             $0.height.equalTo(28)
         }
-        albumsTitle.snp.makeConstraints{
-            $0.left.equalTo(albumsImage.snp.right).offset(20)
+        albumsTitleLable.snp.makeConstraints{
+            $0.left.equalTo(albumsImageImageView.snp.right).offset(20)
         }
-        filesCountInAlbum.snp.makeConstraints{
+        filesCountInAlbumLable.snp.makeConstraints{
             $0.right.equalToSuperview().offset(-15)
         }
     }

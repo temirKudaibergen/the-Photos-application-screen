@@ -12,23 +12,23 @@ final class MyAlbumsViewCell: UICollectionViewCell {
     // MARK: Properties
     
     static let identifier = "MyAlbumsViewCell"
-
+    
     // MARK: UI
     
-    private let albumsImage: UIImageView = {
-       let imageView = UIImageView()
+    private let albumsImageImageView: UIImageView = {
+        let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         return imageView
     }()
     
-    private let albumsTitle: UILabel = {
-       let lable = UILabel()
+    private let albumsTitleLable: UILabel = {
+        let lable = UILabel()
         return lable
     }()
     
-    private let filesCountInAlbum: UILabel = {
-       let lable = UILabel()
+    private let filesCountInAlbumLable: UILabel = {
+        let lable = UILabel()
         lable.textColor = .lightGray
         return lable
     }()
@@ -44,7 +44,6 @@ final class MyAlbumsViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        clipsToBounds = true
         setupViews()
         setupLayout()
     }
@@ -57,21 +56,22 @@ final class MyAlbumsViewCell: UICollectionViewCell {
     
     private func setupViews() {
         backgroundColor = .white
+        clipsToBounds = true
         contentView.addSubview(stack)
-        stack.addArrangedSubview(albumsImage)
-        stack.addArrangedSubview(albumsTitle)
-        stack.addArrangedSubview(filesCountInAlbum)
+        stack.addArrangedSubview(albumsImageImageView)
+        stack.addArrangedSubview(albumsTitleLable)
+        stack.addArrangedSubview(filesCountInAlbumLable)
     }
     
-    func configureCell(imageName: String, title: String, filesCount: String) {
-        albumsImage.image = UIImage(named: imageName)
-        albumsTitle.text = title
-        filesCountInAlbum.text = filesCount
+    public func configureCell(imageName: String, title: String, filesCount: String) {
+        albumsImageImageView.image = UIImage(named: imageName)
+        albumsTitleLable.text = title
+        filesCountInAlbumLable.text = filesCount
     }
     
     private func setupLayout() {
         stack.snp.makeConstraints{
-            $0.top.left.bottom.right.equalTo(contentView)
+            $0.edges.equalTo(contentView)
             $0.width.equalTo(170)
             $0.height.equalTo(300)
         }

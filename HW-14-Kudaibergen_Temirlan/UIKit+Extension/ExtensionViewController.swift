@@ -9,11 +9,11 @@ import UIKit
 
 extension Albums: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        sections.count
+        return sections.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        sections[section].count
+        return sections[section].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -21,33 +21,37 @@ extension Albums: UICollectionViewDataSource, UICollectionViewDelegate {
         case .myAlbums(let myAlbums):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumsViewCell.identifier, for: indexPath) as? MyAlbumsViewCell
             else { return UICollectionViewCell()}
-            cell.configureCell(imageName: myAlbums[indexPath.row].image,
-                               title: myAlbums[indexPath.row].title,
-                               filesCount: myAlbums[indexPath.row].countFiles)
+            let media = myAlbums[indexPath.row]
+            cell.configureCell(imageName: media.image,
+                               title: media.title,
+                               filesCount: media.filesCount)
             return cell
             
         case .peopleAndPlaces(let peopleAndPlaces):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PeopleAndPlacesViewCell.identifier, for: indexPath) as? PeopleAndPlacesViewCell
             else { return UICollectionViewCell()}
-            cell.configureCell(imageName: peopleAndPlaces[indexPath.row].image,
-                               title: peopleAndPlaces[indexPath.row].title,
-                               filesCount: peopleAndPlaces[indexPath.row].countFiles)
+            let media = peopleAndPlaces[indexPath.row]
+            cell.configureCell(imageName: media.image,
+                               title: media.title,
+                               filesCount: media.filesCount)
             return cell
             
         case .mediaTypes(let mediaTypes):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MediaTypesViewCell.identifier, for: indexPath) as? MediaTypesViewCell
             else { return UICollectionViewCell()}
-            cell.configureCell(imageName: mediaTypes[indexPath.row].image,
-                               title: mediaTypes[indexPath.row].title,
-                               filesCount: mediaTypes[indexPath.row].countFiles)
+            let media = mediaTypes[indexPath.row]
+            cell.configureCell(imageName: media.image,
+                               title: media.title,
+                               filesCount: media.filesCount)
             return cell
             
         case .utilities(let utilities):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UtilitiesViewCell.identifier, for: indexPath) as? UtilitiesViewCell
             else { return UICollectionViewCell()}
-            cell.configureCell(imageName: utilities[indexPath.row].image,
-                               title: utilities[indexPath.row].title,
-                               filesCount: utilities[indexPath.row].countFiles)
+            let media = utilities[indexPath.row]
+            cell.configureCell(imageName: media.image,
+                               title: media.title,
+                               filesCount: media.filesCount)
             return cell
         }
     }

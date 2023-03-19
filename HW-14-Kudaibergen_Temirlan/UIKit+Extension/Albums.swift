@@ -14,24 +14,24 @@ final class Albums: UIViewController {
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        let collectionViwe = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionViwe.backgroundColor = .none
-        collectionViwe.bounces = false
-        collectionViwe.delegate = self
-        collectionViwe.dataSource = self
-        collectionViwe.register(MyAlbumsViewCell.self,
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .none
+        collectionView.bounces = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(MyAlbumsViewCell.self,
                                 forCellWithReuseIdentifier: MyAlbumsViewCell.identifier)
-        collectionViwe.register(PeopleAndPlacesViewCell.self,
+        collectionView.register(PeopleAndPlacesViewCell.self,
                                 forCellWithReuseIdentifier: PeopleAndPlacesViewCell.identifier)
-        collectionViwe.register(MediaTypesViewCell.self,
+        collectionView.register(MediaTypesViewCell.self,
                                 forCellWithReuseIdentifier: MediaTypesViewCell.identifier)
-        collectionViwe.register(UtilitiesViewCell.self,
+        collectionView.register(UtilitiesViewCell.self,
                                 forCellWithReuseIdentifier: UtilitiesViewCell.identifier)
-        collectionViwe.register(HeaderSupplementaryView.self,
+        collectionView.register(HeaderSupplementaryView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: HeaderSupplementaryView.identifier)
-        collectionViwe.collectionViewLayout = createLayout()
-        return collectionViwe
+        collectionView.collectionViewLayout = createLayout()
+        return collectionView
     }()
     
     let sections = MockData.shared.pageData
@@ -40,14 +40,14 @@ final class Albums: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupAlbumsBar()
+        setupNavigationBar()
         setupViews()
         setupLayout()
     }
     
 //    MARK: Setup
 
-    func setupAlbumsBar() {
+    public func setupNavigationBar() {
         title = "Альбомы"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.setLeftBarButton(UIBarButtonItem(
@@ -64,7 +64,6 @@ final class Albums: UIViewController {
     
     private func setupLayout() {
         collectionView.snp.makeConstraints{
-            $0.top.equalTo(additionalSafeAreaInsets)
             $0.edges.equalTo(view)
         }
     }
